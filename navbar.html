@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="nav_css.css">
+<script>
+function myFunction() {
+  var x = document.getElementById("mynavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+
+  function  checkpassword(form){
+    var psw1=form.psw1.value;
+    var psw2=form.psw2.value;
+    document.getElementById("input1").required=false;
+    document.getElementById("input2").required=false;
+    document.getElementById("input3").required=true;
+    document.getElementById("input4").required=true;
+    document.getElementById("input5").required=true;
+    document.getElementById("input6").required=true;
+    if (psw1!=psw2){
+      alert("Password didn't match. Try again");
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+  function fun_signup(){
+    var x=document.getElementById('id02');
+    var y=document.getElementById('id03');
+    x.style.display="none";
+    y.style.display="block";
+  }
+
+  function fun_login(){
+    var y=document.getElementById('id03');
+    var x=document.getElementById('id02');
+    y.style.display="none";
+    x.style.display="block";
+  }
+
+  function submit_login(){
+    document.getElementById("input1").required=true;
+    document.getElementById("input2").required=true;
+    document.getElementById("input3").required=false;
+    document.getElementById("input4").required=false;
+    document.getElementById("input5").required=false;
+    document.getElementById("input6").required=false;
+  }
+
+</script>
+</head>
+<body>
+
+<div class="divnav">
+
+  <div class="navbar" id="mynavbar">
+  	<ul>
+  		<li><a href="#">link1</a></li>
+  		<li><a href="#">link2</a></li>
+  		<li class="dropdown">
+      	<a href="javascript:void(0)" class="dropbtn">Dropdown <i class="fa fa-caret-down"></i></a>
+      	<div class="dropdown-content">
+        	<a href="#">Link 1</a>
+        	<a href="#">Link 2</a>
+        	<a href="#">Link 3</a>
+        	<a href="#">Link 4</a>
+      	</div>
+    	</li>
+    	<li class="icon"><a href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars"></i></a></li>
+      <li style="float: right"><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+
+      <div id="id01" class="modal">
+    
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="container">
+            <button type="button" id="login" onclick="fun_login()">Log In</button>
+            <button type="button" id="signup" onclick="fun_signup()">Sign Up</button>
+          </div>
+
+          <div>
+
+            <div class="container" id="id02">
+
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required id="input1">
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required id="input2">
+                
+              <button type="submit" onclick="submit_login()">Login</button>
+            </div>
+
+            <div class="container" id="id03" style="display: none">
+
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" id="input3">
+
+              <label for="email"><b>Gmail</b></label>
+              <input type="text" placeholder="Enter Gmail" name="email" id="input4">
+
+              <label for="psw1"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw1" id="input5">
+
+              <label for="psw2"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw2" id="input6">
+
+              <button type="submit" onclick=" return checkpassword(form)">Sign Up</button>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+
+          </div>
+          
+        </form>
+      </div>
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }   
+      </script>
+  	</ul>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="column side">
+    <h2>Side</h2>
+    <h2>To show the option for other years' of question paper</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+
+    <a href="#">Link 1</a>
+    <br><br>
+
+    <a href="#">Link 2</a>
+    <br><br>
+
+    <a href="#">Link 3</a>
+    <br><br>
+
+    <a href="#">Link 4</a>
+    <br><br>
+  </div>
+  
+  <div class="column middle">
+    <div class="card">
+      <div class="container">
+        <p><b>Lorem ipson happy chases is the newly created website which is especially designed for
+         the business enterprener. By subscribing the website you can get access to all the aunterprener
+         related article which can help you flourishing the business. The techniques used in this is 
+         used by my of the well flurished companies across the world.</b></p>
+
+      </div>
+    </div>
+    
+
+<div class="card">
+    <div class="container">
+      <p><b>Lorem ipson happy chases is the newly created website which is especially designed for
+       the business enterprener. By subscribing the website you can get access to all the aunterprener
+       related article which can help you flourishing the business. The techniques used in this is 
+       used by my of the well flurished companies across the world.</b></p>
+
+    </div>
+  </div>
+
+  </div>
+  
+  <div class="column side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+</div>
+
+</body>
+</html>
